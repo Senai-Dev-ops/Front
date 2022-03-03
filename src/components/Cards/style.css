@@ -13,16 +13,29 @@
 	border-radius: 23px;
 }
 
-.box-card h3.title {
+.container-box-title {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+}
+
+.container-box-title h3.title {
+	margin: 0 1em;
+
+	letter-spacing: 0.01em;
 	text-transform: capitalize;
 	text-align: center;
-
 	font-size: 1.4em;
-	font-weight: 600;
+	font-weight: 400;
+	font-style: oblique;
 	color: #001233;
 }
 
 .card-content {
+	width: 100%;
+	padding: 0 12px;
+
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -31,10 +44,17 @@
 }
 
 .card-content .card-value {
-	border: 1px solid green;
 	margin: 0 16px;
+	height: min-content;
+}
+
+.card-content .card-value p {
+	font-size: 2.3em;
+	font-weight: 300;
 }
 
 .card-content .card-image {
+	margin: 5px 10px;
 	border: 1px solid black;
+	height: 100px;
 }

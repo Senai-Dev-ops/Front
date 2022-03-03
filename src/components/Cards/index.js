@@ -4,11 +4,13 @@ import "./style.css";
 const Cards = ({ title, image, textContent }) => {
 	return (
 		<div className="box-card">
-			<h3 className="title">{title}</h3>
+			<div className="container-box-title">
+				<h3 className="title">{title}</h3>
+			</div>
 
 			<div className="card-content">
 				<div className="card-value">
-					<div>{textContent}</div>
+					<p>{textContent}</p>
 				</div>
 
 				<div className="card-image">
