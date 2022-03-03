@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <div className="header-container">
       <IconButton arial-label="Notifications" className="header-admin-notif">
-        <Badge color="secondary" variant="dot">
+        <Badge color="secondary" variant="dot" color="error">
           <NotificationsIcon />
         </Badge>
       </IconButton>
