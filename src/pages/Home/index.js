@@ -1,6 +1,6 @@
 import React from "react";
 import Cards from "../../components/Cards";
-import GirlWorkflow from "../../assets/img-card1.png";
+import GirlWorkflowImg from "../../assets/img-card1.png";
 import "./style.css";
 import Header from "../../components/header";
 
@@ -10,10 +10,19 @@ const Home = () => {
       <Header />
       <div className="container-cards">
         <Cards
+          typeCard="visits"
           color="purple"
           title="vendas"
           textContent="500"
-          image={GirlWorkflow}
+          image={GirlWorkflowImg}
+        />
+
+        <Cards
+          typeCard="clients"
+          color="purple"
+          title="vendas"
+          textContent="500"
+          image={GirlWorkflowImg}
         />
       </div>
     </article>
