@@ -1,9 +1,9 @@
 import React from "react";
 import "./style.css";
 
-const Cards = ({ title, image, textContent }) => {
+const Cards = ({ title, image, textContent, color }) => {
 	return (
-		<div className="box-card">
+		<div className={`box-card ${color}`}>
 			<div className="container-box-title">
 				<h3 className="title">{title}</h3>
 			</div>
@@ -13,9 +13,7 @@ const Cards = ({ title, image, textContent }) => {
 					<p>{textContent}</p>
 				</div>
 
-				<div className="card-image">
-					<img src={image} alt={`Card ${title}`} />
-				</div>
+				<img className="card-image" src={image} alt={`Card ${title}`} />
 			</div>
 		</div>
 	);
