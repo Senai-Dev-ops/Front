@@ -2,14 +2,12 @@
   box-shadow: 2px 2px 0.4em #001233;
 
   width: 100%;
-  height: calc(min-content + 5px);
+  margin: 10px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  margin: 20px;
 
   border-radius: 23px;
 }

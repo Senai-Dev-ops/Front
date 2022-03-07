@@ -7,15 +7,22 @@ article.container {
 .container-cards {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
-
-  margin: 20px;
 }
 
 .container-cards .two-cards {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 100%;
+}
+
+.card {
+  width: 45%;
 }
 
 div.navbar {
