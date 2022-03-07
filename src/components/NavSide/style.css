@@ -24,18 +24,38 @@
   flex-direction: row;
   padding-left: 3em;
   align-items: center;
-  
   color: #fff;
+  height: 10vh;
   
  
 }
 
+.area img {
+  margin-right: 0.30em;
+}
+
+.descript{
+  width: 11em;
+  padding-left: 1em;
+  display: flex;
+  justify-content:flex-start;
+  height: 3em;
+  align-items: center;
+  
+}
+
 .descript:hover{
-    background-color: #6d76b1;
+    background-color: #2d356e;
     cursor: pointer;
-    border-radius: 1em;
+    border-radius: 10px;
+    
 }
 .menu{
   display: flex;
   flex-direction: column;
+}
+
+
+.logo img{
+  height: 3em;
 }

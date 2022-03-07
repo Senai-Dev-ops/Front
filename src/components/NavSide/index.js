@@ -8,40 +8,36 @@ import txsucess from "../../assets/images/taxa-de-sucesso2.svg"
 const Side = () => {
   return (
     <div className="containergeral">
-      
-        <div className="logo">
-          <img src={senaisuperior} alt=""></img>
+
+      <div className="logo">
+        <img src={senaisuperior} alt=""></img>
+      </div>
+
+
+      <div className="menu">
+
+        <div className="area">
+          <img src={chart} alt=""></img>
+          <div className="descript">Dashboard</div>
         </div>
 
+        <div className="area">
+          <img src={todasvendas} alt=""></img>
+          <div className="descript">Todas as Vendas</div>
+        </div>
+
+        <div className="area">
+          <img src={tabela} alt=""></img>
+          <div className="descript">Tabela</div>
+        </div>
         
-        <div className="menu">
-          <div className="area">
-            <div className="image">
-              <img src={chart} alt=""></img>
-            </div>
-            <div className="descript">Dashboard</div>
-          </div>
-          <div className="area">
-            <div className="image">
-              <img src={todasvendas} alt=""></img>
-            </div>
-            <div className="descript">Todas as Vendas</div>
-          </div>
-          <div className="area">
-            <div className="image">
-              <img src={tabela} alt=""></img>
-            </div>
-            <div className="descript">Tabela</div>
-          </div>
-          <div className="area">
-            <div className="image">
-              <img src={txsucess} alt=""></img>
-            </div>
-            <div className="descript">Taxa de Sucesso</div>
-          </div>
+        <div className="area">
+          <img src={txsucess} alt=""></img>
+          <div className="descript">Taxa de Sucesso</div>
         </div>
       </div>
-    
+    </div>
+
   );
 };
 
