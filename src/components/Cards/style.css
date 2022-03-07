@@ -1,6 +1,7 @@
 .box-card {
   width: 100%;
   height: min-content;
+  margin: 5px;
 
   display: flex;
   flex-direction: column;
@@ -10,7 +11,7 @@
   border-radius: 23px;
 }
 
-.box-card.purple {
+.box-card.visits {
   background-color: #b0c2e3;
 }
 
@@ -22,12 +23,12 @@
 }
 
 .container-box-title h3.title {
-  margin: 0.85em 1.3em 0;
+  margin: 0.85em 1.3em;
 
   letter-spacing: 0.01em;
   text-transform: capitalize;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.45em;
   font-weight: 400;
   font-style: oblique;
   color: #001233;
@@ -37,6 +38,7 @@
   width: 100%;
   padding: 0 12px;
   margin-bottom: 12px;
+  margin-top: 5px;
 
   display: flex;
   flex-direction: row;
