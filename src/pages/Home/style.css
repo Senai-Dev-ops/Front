@@ -1,11 +1,18 @@
 article.container {
   width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .container-cards {
   width: 400px;
+}
+
+div.navbar {
+  width: 260px;
+  display: flex;
+}
+
+div.content {
+  width: calc(100% - 260px);
 }
