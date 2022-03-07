@@ -1,0 +1,9 @@
+.legend-container {
+  text-align: center;
+  padding: 5px;
+
+  background-color: rgba(133, 152, 190, 1);
+  color: rgba(0, 18, 51, 1);
+
+  font-weight: bold;
+}

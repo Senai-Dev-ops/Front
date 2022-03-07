@@ -33,3 +33,10 @@ div.navbar {
 div.content {
   width: calc(100% - 260px);
 }
+
+.row {
+  height: calc((100% - 7vh) / 2);
+  width: 100%;
+
+  display: flex;
+}
