@@ -13,9 +13,11 @@ const Home = () => {
       <div className="content">
         <Header />
         <div className="container-cards">
-          <Cards typeCard="visits" />
+          <div className="two-cards">
+            <Cards typeCard="visits" />
 
-          <Cards typeCard="clients" />
+            <Cards typeCard="clients" />
+          </div>
 
           <Cards typeCard="values" />
         </div>

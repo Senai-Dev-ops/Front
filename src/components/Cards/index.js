@@ -45,11 +45,11 @@ const Cards = ({ typeCard }) => {
         </div>
 
         <div className="card-content">
-          <img className="card-image" src={BoyChasingMoney} alt="Card image" />
-
           <div className="card-value">
             <p>R$ 246.153,87</p>
           </div>
+
+          <img className="card-image" src={BoyChasingMoney} alt="Card image" />
         </div>
       </div>
     );

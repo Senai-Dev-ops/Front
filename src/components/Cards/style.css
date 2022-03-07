@@ -1,12 +1,15 @@
 .box-card {
+  box-shadow: 2px 2px 0.4em #001233;
+
   width: 100%;
-  height: min-content;
-  margin: 5px;
+  height: calc(min-content + 5px);
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  margin: 20px;
 
   border-radius: 23px;
 }
@@ -35,7 +38,7 @@
 }
 
 .card-content {
-  width: 100%;
+  width: 90%;
   padding: 0 12px;
   margin-bottom: 12px;
   margin-top: 5px;

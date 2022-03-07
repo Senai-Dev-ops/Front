@@ -5,7 +5,17 @@ article.container {
 }
 
 .container-cards {
-  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  margin: 20px;
+}
+
+.container-cards .two-cards {
+  display: flex;
+  flex-direction: row;
 }
 
 div.navbar {
