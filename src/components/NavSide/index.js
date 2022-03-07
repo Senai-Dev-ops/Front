@@ -7,6 +7,7 @@ import txsucess from "../../assets/images/taxa-de-sucesso2.svg"
 
 const Side = () => {
   return (
+    <>
     <div className="containergeral">
 
       <div className="logo">
@@ -30,14 +31,19 @@ const Side = () => {
           <img src={tabela} alt=""></img>
           <div className="descript">Tabela</div>
         </div>
-        
+
         <div className="area">
           <img src={txsucess} alt=""></img>
           <div className="descript">Taxa de Sucesso</div>
         </div>
       </div>
-    </div>
 
+      <div className="footer">
+        <p className="copi">&copy;Copyright Senai Suiço Brasileira</p>
+      </div>
+    </div>
+    
+    </>
   );
 };
 
