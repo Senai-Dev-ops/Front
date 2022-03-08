@@ -3,8 +3,9 @@ import Cards from "../../components/Cards";
 import "./style.css";
 import Header from "../../components/header";
 import Side from "../../components/NavSide";
-import ChartSucess from "../ChartSucess";
+import ChartSucessComponent from "../../components/ChartSucess";
 import DonutSales from "../DonutSales";
+import CustomTable from "../../components/Table";
 
 const Home = () => {
   return (
@@ -16,23 +17,25 @@ const Home = () => {
         <Header />
         <div className="row">
           <div className="container-cards">
-            <div className="two-cards">
-              <div className="card">
-                <Cards typeCard="visits" />
-              </div>
-
-              <div className="card">
-                <Cards typeCard="clients" />
-              </div>
-
+            <div className="cards-up">
+              <Cards typeCard="visits" />
+              <Cards typeCard="clients" />
+            </div>
+            <div className="cards-down">
               <Cards typeCard="values" />
             </div>
           </div>
-          <ChartSucess />
-          <DonutSales />
+
+          <div className="separator" />
+
+          <ChartSucessComponent showLegend={false} />
         </div>
 
-        <div className="row"></div>
+        <div className="row">
+          <DonutSales />
+          <div className="separator" />
+          <CustomTable />
+        </div>
       </div>
     </article>
   );
