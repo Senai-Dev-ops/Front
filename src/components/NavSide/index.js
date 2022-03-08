@@ -22,14 +22,14 @@ const Side = () => {
             </div>
           </Link>
 
-          <Link to="/table">
+          <Link to="/donut">
             <div className="area">
               <img src={todasvendas} alt=""></img>
               <div className="descript">Todas as Vendas</div>
             </div>
           </Link>
 
-          <Link to="/donut">
+          <Link to="/table">
             <div className="area">
               <img src={tabela} alt=""></img>
               <div className="descript">Tabela</div>
