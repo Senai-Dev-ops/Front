@@ -35,7 +35,7 @@ const Home = () => {
           <DonutSales />
           <div className="separator" />
           <div className="table-container">
-            <CustomTable />
+            <CustomTable rowsNumber={5}/>
           </div>
         </div>
       </div>

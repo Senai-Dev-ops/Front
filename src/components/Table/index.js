@@ -119,9 +119,9 @@ const rows = [
     createData('Oreo', 437, 18.0, 1, 1),
 ];
 
-export default function CustomTable() {
+export default function CustomTable({rowsNumber}) {
     const [page, setPage] = useState(0);
-    const [rowsPerPage, setRowsPerPage] = useState(5);
+    const [rowsPerPage, setRowsPerPage] = useState(rowsNumber);
 
     // Avoid a layout jump when reaching the last page with empty rows.
     const emptyRows =
