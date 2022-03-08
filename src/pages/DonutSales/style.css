@@ -1,0 +1,13 @@
+.donutSales{
+    width: 350px;  
+    display: flex;   
+}
+.cont {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.title {
+    font-size: 25px;
+    text-align: center;
+  }

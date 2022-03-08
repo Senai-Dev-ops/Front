@@ -4,6 +4,7 @@ import "./style.css";
 import Header from "../../components/header";
 import Side from "../../components/NavSide";
 import ChartSucess from "../ChartSucess";
+import DonutSales from "../DonutSales";
 
 const Home = () => {
   return (
@@ -28,7 +29,9 @@ const Home = () => {
             </div>
           </div>
           <ChartSucess />
+          <DonutSales />
         </div>
+
         <div className="row"></div>
       </div>
     </article>
