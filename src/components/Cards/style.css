@@ -29,9 +29,9 @@
 }
 
 .container-box-title h3.title {
-  margin: 0.85em 1.3em;
+  padding-top: 0.5em;
+  margin: 0 1.3em;
 
-  letter-spacing: 0.01em;
   text-transform: capitalize;
   text-align: center;
   font-size: 1.45em;
@@ -42,6 +42,7 @@
 
 .card-content {
   width: 90%;
+  height: 10em;
   padding: 0 12px;
   margin-bottom: 12px;
   margin-top: 5px;
@@ -55,6 +56,10 @@
 
 .card-content .card-value {
   margin: 0 16px;
+}
+
+.card-content img {
+  padding-bottom: 1em;
 }
 
 .card-content .card-value p {

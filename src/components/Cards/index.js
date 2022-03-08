@@ -1,7 +1,7 @@
 import React from "react";
-import GirlWorkflowImg from "../../assets/img-card1.png";
-import GirlClient from "../../assets/img-card2.png";
-import BoyChasingMoney from "../../assets/img-card3.png";
+import GirlWorkflowImg from "../../assets/img1.png";
+import GirlClient from "../../assets/img2.png";
+import BoyChasingMoney from "../../assets/img3.png";
 import "./style.css";
 
 const Cards = ({ typeCard }) => {

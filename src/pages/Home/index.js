@@ -4,7 +4,7 @@ import "./style.css";
 import Header from "../../components/header";
 import Side from "../../components/NavSide";
 import ChartSucessComponent from "../../components/ChartSucess";
-import DonutSales from "../DonutSales";
+import DonutSales from "../../components/DonutSales";
 import CustomTable from "../../components/Table";
 
 const Home = () => {
@@ -35,8 +35,7 @@ const Home = () => {
           <DonutSales />
           <div className="separator" />
           <div className="table-container">
-              <CustomTable />
-            
+            <CustomTable />
           </div>
         </div>
       </div>
