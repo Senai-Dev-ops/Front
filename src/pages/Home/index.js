@@ -34,7 +34,10 @@ const Home = () => {
         <div className="row">
           <DonutSales />
           <div className="separator" />
-          <CustomTable />
+          <div className="table-container">
+              <CustomTable />
+            
+          </div>
         </div>
       </div>
     </article>

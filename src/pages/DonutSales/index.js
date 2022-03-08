@@ -35,16 +35,12 @@ const DonutSales = () => {
     },
   };
   return (
-    <>
-      <div className="content">
-        <h1 className="title">Todas as Vendas</h1>
-        <div className="cont">
-          <div className="donutSales">
-            <Doughnut options={options} data={data} />
-          </div>
-        </div>
+    <div className="content-donut">
+      <h1 className="title">Todas as Vendas</h1>
+      <div className="donutSales">
+        <Doughnut options={options} data={data} />
       </div>
-    </>
+    </div>
   );
 };
 
