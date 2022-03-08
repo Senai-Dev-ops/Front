@@ -22,7 +22,7 @@ const TablePage = () => {
                     <Cards typeCard="values" />
                 </div>
                 <div className="table-container">
-                    <CustomTable rowsNumber={9} />
+                    <CustomTable rowsNumber={8} />
                 </div>
             </div>
         </div>
