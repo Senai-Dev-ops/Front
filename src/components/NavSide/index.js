@@ -29,7 +29,7 @@ const Side = ({ page }) => {
           className={page === "sellers" ? "area active" : "area"}
         >
           <img src={tabela} alt="Tabela"></img>
-          <div className="descript">Tabela</div>
+          <div className="descript">Vendedores</div>
         </Link>
 
         <Link

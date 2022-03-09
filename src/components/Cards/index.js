@@ -4,10 +4,12 @@ import GirlClient from "../../assets/img2.png";
 import BoyChasingMoney from "../../assets/img3.png";
 import "./style.css";
 
-const Cards = ({ typeCard }) => {
+const Cards = ({ typeCard, css }) => {
   if (typeCard === "visits") {
     return (
-      <div className="box-card mini-card visits">
+      <div
+        className={css ? "box-card default-mini" : "box-card mini-card visits"}
+      >
         <h3 className="title">visitas</h3>
 
         <div className="card-content">
@@ -19,7 +21,9 @@ const Cards = ({ typeCard }) => {
     );
   } else if (typeCard === "clients") {
     return (
-      <div className="box-card mini-card clients">
+      <div
+        className={css ? "box-card default-mini" : "box-card mini-card clients"}
+      >
         <h3 className="title">clientes</h3>
 
         <div className="card-content">
@@ -31,7 +35,9 @@ const Cards = ({ typeCard }) => {
     );
   } else if (typeCard === "values") {
     return (
-      <div className="box-card big-card values">
+      <div
+        className={css ? "box-card default-big" : "box-card big-card values"}
+      >
         <h3 className="title">Valores</h3>
 
         <div className="card-content">

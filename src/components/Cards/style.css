@@ -49,3 +49,13 @@
 .big-card img {
   padding-bottom: 1em;
 }
+
+/*- Defaults -*/
+
+.default-mini {
+  width: 23.5%;
+}
+
+.default-big {
+  width: 45%;
+}
