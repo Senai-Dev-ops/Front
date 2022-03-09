@@ -1,46 +1,27 @@
 import React from "react";
-import ConfigChart from "../../service/Chart";
-import { Doughnut } from "react-chartjs-2";
+import DonutSalesComponent from "../../components/DonutSales";
+import Header from "../../components/header";
+import Side from "../../components/NavSide";
+
 import "./style.css";
 
-ConfigChart();
-
 const DonutSales = () => {
-  const data = {
-    type: "doughnut",
-    labels: ["Padme", "Barry Allen", "Anakin", "Logan", "Kal-Ei"],
-    datasets: [
-      {
-        label: "# of Votes",
-        data: [473088, 499928, 220426, 477138, 444867],
-        backgroundColor: [
-          "#002466",
-          "#2D1E80",
-          "#273D81",
-          "#5A189A",
-          "#4A2BFA",
-        ],
-        borderColor: ["#002466", "#2D1E80", "#273D81", "#5A189A", "#4A2BFA"],
-        borderWidth: 1,
-      },
-    ],
-  };
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        display: true,
-        position: "bottom",
-      },
-    },
-  };
   return (
-    <div className="content-donut">
-      <h1 className="title">Todas as Vendas</h1>
-      <div className="donutSales">
-        <Doughnut options={options} data={data} />
+    <article className="container">
+      <Side page="sells" />
+      <div className="content">
+        <Header />
+
+        <div className="donut-content">
+          <h1 className="donut-title">Todas as Vendas</h1>
+          <div className="donut-component">
+            <div className="donut-area">
+              <DonutSalesComponent legendPosition="right" cutout={180} />
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </article>
   );
 };
 

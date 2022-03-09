@@ -4,15 +4,13 @@ import "./style.css";
 import Header from "../../components/header";
 import Side from "../../components/NavSide";
 import ChartSucessComponent from "../../components/ChartSucess";
-import DonutSales from "../../components/DonutSales";
+import DonutSalesComponent from "../../components/DonutSales";
 import CustomTable from "../../components/Table";
 
 const Home = () => {
   return (
     <article className="container">
-      <div className="navbar">
-        <Side page="home" />
-      </div>
+      <Side page="home" />
       <div className="content">
         <Header />
         <div className="row">
@@ -32,10 +30,17 @@ const Home = () => {
         </div>
 
         <div className="row">
-          <DonutSales />
+          <div className="content-donut">
+            <h1 className="title">Todas as Vendas</h1>
+            <div className="donutSales">
+              <DonutSalesComponent legendPosition="bottom" cutout={80} />
+            </div>
+          </div>
           <div className="separator" />
           <div className="table-container">
-            <CustomTable rowsNumber={5} />
+            <div className="table-content">
+              <CustomTable rowsNumber={4} />
+            </div>
           </div>
         </div>
       </div>

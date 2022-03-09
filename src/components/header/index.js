@@ -10,24 +10,24 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import "./index.css";
 
 export default function Header() {
-	return (
-		<div className="header-container">
-			<IconButton arial-label="Notifications" className="header-admin-notif">
-				<Badge variant="dot" color="error">
-					<NotificationsIcon />
-				</Badge>
-			</IconButton>
-			<div className="header-profile-pic">
-				<AdminPanelSettingsIcon />
-			</div>
-			<p className="header-admin-title">Administrator</p>
-			<IconButton
-				arial-label="Info"
-				onClick={() => console.log("Hello World!")}
-				className="header-admin-info"
-			>
-				<KeyboardArrowDownIcon />
-			</IconButton>
-		</div>
-	);
+  return (
+    <div className="header-container">
+      <IconButton arial-label="Notifications" className="header-admin-notif">
+        <Badge variant="dot" color="error">
+          <NotificationsIcon />
+        </Badge>
+      </IconButton>
+      <div className="header-profile-pic">
+        <AdminPanelSettingsIcon />
+      </div>
+      <p className="header-admin-title">Administrator</p>
+      <IconButton
+        arial-label="Info"
+        onClick={() => console.log("Hello World!")}
+        className="header-admin-info"
+      >
+        <KeyboardArrowDownIcon />
+      </IconButton>
+    </div>
+  );
 }

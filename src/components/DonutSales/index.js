@@ -5,13 +5,13 @@ import "./style.css";
 
 ConfigChart();
 
-const DonutSalesComponent = () => {
+const DonutSalesComponent = ({ legendPosition, cutout }) => {
   const data = {
     type: "doughnut",
     labels: ["Padme", "Barry Allen", "Anakin", "Logan", "Kal-Ei"],
     datasets: [
       {
-        label: "# of Votes",
+        label: "Total de Vendas",
         data: [473088, 499928, 220426, 477138, 444867],
         backgroundColor: [
           "#002466",
@@ -26,22 +26,16 @@ const DonutSalesComponent = () => {
     ],
   };
   const options = {
+    cutout: cutout,
     responsive: true,
     plugins: {
       legend: {
         display: true,
-        position: "bottom",
+        position: legendPosition,
       },
     },
   };
-  return (
-    <div className="content-donut">
-      <h1 className="title">Todas as Vendas</h1>
-      <div className="donutSales">
-        <Doughnut options={options} data={data} />
-      </div>
-    </div>
-  );
+  return <Doughnut options={options} data={data} />;
 };
 
 export default DonutSalesComponent;

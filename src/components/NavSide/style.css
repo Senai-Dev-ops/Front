@@ -4,9 +4,10 @@
   flex-direction: column;
   width: 15vw;
   height: 100vh;
-  position: fixed;
-
   text-align: center;
+
+  position: fixed;
+  left: 0;
 }
 
 .logo {
@@ -54,6 +55,9 @@
 
 .area.active {
   background-color: #2d356e;
+
+  width: 92%;
+  height: 2.5em;
 }
 
 .area:hover {

@@ -6,21 +6,21 @@ import DonutSales from "./pages/DonutSales";
 import ChartSucess from "./pages/ChartSucess";
 
 export default function routes() {
-	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/*" element={<Navigate to="/" />} />
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/*" element={<Navigate to="/" />} />
 
-				<Route path="/table" element={<TablePage />} />
-				<Route path="/table/*" element={<Navigate to="/table" />} />
+        <Route path="/sellers" element={<TablePage />} />
+        <Route path="/sellers/*" element={<Navigate to="/sellers" />} />
 
-				<Route path="/donut" element={<DonutSales />} />
-				<Route path="/donut/*" element={<Navigate to="/donut" />} />
+        <Route path="/sells" element={<DonutSales />} />
+        <Route path="/sells/*" element={<Navigate to="/sells" />} />
 
-				<Route path="/bar-chart" element={<ChartSucess />} />
-				<Route path="/bar-chart/*" element={<Navigate to="/bar-chart" />} />
-			</Routes>
-		</BrowserRouter>
-	);
+        <Route path="/success" element={<ChartSucess />} />
+        <Route path="/success/*" element={<Navigate to="/success" />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
