@@ -6,46 +6,50 @@ import chart from "../../assets/images/Chart.svg";
 import txsucess from "../../assets/images/taxa-de-sucesso2.svg";
 import { Link } from "react-router-dom";
 
-const Side = () => {
+const Side = ({ page }) => {
   return (
     <>
       <div className="containergeral">
         <div className="logo">
-          <img src={senaisuperior} alt=""></img>
+          <img src={senaisuperior} alt="Senai Superior"></img>
         </div>
 
         <div className="menu">
-          <Link to="/">
-            <div className="area">
-              <img src={chart} alt=""></img>
-              <div className="descript">Dashboard</div>
-            </div>
+          <Link to="/" className={page === "home" ? "area active" : "area"}>
+            <img src={chart} alt="Dashboard"></img>
+            <div className="descript">Dashboard</div>
           </Link>
 
-          <Link to="/donut">
-            <div className="area">
-              <img src={todasvendas} alt=""></img>
-              <div className="descript">Todas as Vendas</div>
-            </div>
+          <Link
+            to="/donut"
+            className={page === "donut" ? "area active" : "area"}
+          >
+            <img src={todasvendas} alt="Vendas"></img>
+            <div className="descript">Todas as Vendas</div>
           </Link>
 
-          <Link to="/table">
-            <div className="area">
-              <img src={tabela} alt=""></img>
-              <div className="descript">Tabela</div>
-            </div>
+          <Link
+            to="/table"
+            className={page === "table" ? "area active" : "area"}
+          >
+            <img src={tabela} alt="Tabela"></img>
+            <div className="descript">Tabela</div>
           </Link>
 
-          <Link to="/bar-chart">
-            <div className="area">
-              <img src={txsucess} alt=""></img>
-              <div className="descript">Taxa de Sucesso</div>
-            </div>
+          <Link
+            to="/bar-chart"
+            className={page === "bar-chart" ? "area active" : "area"}
+          >
+            <img src={txsucess} alt="Sucesso"></img>
+            <div className="descript">Taxa de Sucesso</div>
           </Link>
         </div>
 
         <div className="footer">
-          <p className="copi">&copy;Copyright Senai Suiço Brasileira</p>
+          <p className="copi">Senai Suiço Brasileira</p>
+          <p className="copi">
+            Copyright<sup>&copy;</sup>
+          </p>
         </div>
       </div>
     </>

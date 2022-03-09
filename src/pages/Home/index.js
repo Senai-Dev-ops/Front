@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <article className="container">
       <div className="navbar">
-        <Side />
+        <Side page="home" />
       </div>
       <div className="content">
         <Header />
@@ -35,7 +35,7 @@ const Home = () => {
           <DonutSales />
           <div className="separator" />
           <div className="table-container">
-            <CustomTable rowsNumber={5}/>
+            <CustomTable rowsNumber={5} />
           </div>
         </div>
       </div>
