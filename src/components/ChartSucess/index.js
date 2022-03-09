@@ -73,11 +73,8 @@ const ChartSucessComponent = ({ showLegend }) => {
   };
 
   return (
-    <div className="chartSuccess-container">
-      <h1 className="chartSuccess-title">Taxa de Sucesso (em %)</h1>
-      <div className="barChart">
-        <Bar id="chart" options={options} data={data} />
-      </div>
+    <>
+      <Bar id="chart" options={options} data={data} />
       {showLegend ? (
         <div className="legend">
           {legend.map((item, index) => (
@@ -85,7 +82,7 @@ const ChartSucessComponent = ({ showLegend }) => {
           ))}
         </div>
       ) : null}
-    </div>
+    </>
   );
 };
 

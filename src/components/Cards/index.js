@@ -8,7 +8,9 @@ const Cards = ({ typeCard, css }) => {
   if (typeCard === "visits") {
     return (
       <div
-        className={css ? "box-card default-mini" : "box-card mini-card visits"}
+        className={
+          css ? "box-card default-mini visits" : "box-card mini-card visits"
+        }
       >
         <h3 className="title">visitas</h3>
 
@@ -22,7 +24,9 @@ const Cards = ({ typeCard, css }) => {
   } else if (typeCard === "clients") {
     return (
       <div
-        className={css ? "box-card default-mini" : "box-card mini-card clients"}
+        className={
+          css ? "box-card default-mini clients" : "box-card mini-card clients"
+        }
       >
         <h3 className="title">clientes</h3>
 
@@ -36,7 +40,9 @@ const Cards = ({ typeCard, css }) => {
   } else if (typeCard === "values") {
     return (
       <div
-        className={css ? "box-card default-big" : "box-card big-card values"}
+        className={
+          css ? "box-card default-big values" : "box-card big-card values"
+        }
       >
         <h3 className="title">Valores</h3>
 

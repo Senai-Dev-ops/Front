@@ -26,7 +26,12 @@ const Home = () => {
 
           <div className="separator" />
 
-          <ChartSucessComponent showLegend={false} />
+          <div className="chartSuccess-container">
+            <h1 className="chartSuccess-title">Taxa de Sucesso (em %)</h1>
+            <div className="barChart">
+              <ChartSucessComponent showLegend={false} />
+            </div>
+          </div>
         </div>
 
         <div className="row">

@@ -50,6 +50,10 @@
   padding-bottom: 1em;
 }
 
+.box-card.visits {
+  background-color: #b0c2e3;
+}
+
 /*- Defaults -*/
 
 .default-mini {
