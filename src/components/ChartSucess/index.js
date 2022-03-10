@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ConfigChart from "../../service/Chart";
 
 import { Bar } from "react-chartjs-2";
@@ -6,44 +6,61 @@ import { Bar } from "react-chartjs-2";
 import "./index.css";
 import Legend from "../../components/Legend";
 
+import ConnectionAPI from "../../service/apiService";
+import { toast } from "react-toastify";
+const API = new ConnectionAPI();
+
 ConfigChart();
 
 const ChartSucessComponent = ({ showLegend }) => {
-  const MockData = [
+  const [data, setData] = useState([
     {
-      sellerName: "Logan",
-      visited: 1495,
-      deals: 684,
+      sellerName: "Carregando...",
+      visited: 0,
+      deals: 0,
     },
-    {
-      sellerName: "Anakin",
-      visited: 2396,
-      deals: 1028,
-    },
-    {
-      sellerName: "BarryAllen",
-      visited: 3385,
-      deals: 2164,
-    },
-    { sellerName: "Kal-El", visited: 3040, deals: 1958 },
-    { sellerName: "Padme", visited: 3426, deals: 2369 },
-  ];
+  ]);
 
-  const labels = MockData.map((item) => item.sellerName);
-  const dataset = MockData.map((item) => {
-    let tax = (item.deals * 100) / item.visited;
-    return tax.toFixed(1);
-  });
+  const loadData = async () => {
+    try {
+      const response = await API.successTax();
+      setData(response);
+      return response;
+    } catch (error) {
+      toast.warn("Não consegui carregar as informações da Taxa de Sucesso...");
+    }
+  };
 
-  const legend = MockData.map((item) => {
-    let name = item.sellerName;
-    let tax = ((item.deals * 100) / item.visited).toFixed(1);
+  useEffect(() => {
+    async function load() {
+      await loadData();
+    }
+    load();
+  }, []);
 
-    return {
-      name,
-      tax,
-    };
-  });
+  const [labels, setLabels] = useState([]);
+  const [dataset, setDataset] = useState([]);
+  const [legend, setLegend] = useState([]);
+
+  useEffect(() => {
+    setLabels(data.map((item) => item.sellerName));
+    setDataset(
+      data.map((item) => {
+        let tax = (item.deals * 100) / item.visited;
+        return tax.toFixed(1);
+      })
+    );
+    setLegend(
+      data.map((item) => {
+        let name = item.sellerName;
+        let tax = ((item.deals * 100) / item.visited).toFixed(1);
+        return {
+          name,
+          tax: tax === NaN ? (0).toFixed(1) : tax,
+        };
+      })
+    );
+  }, [data]);
 
   const options = {
     indexAxis: "y",
@@ -60,7 +77,7 @@ const ChartSucessComponent = ({ showLegend }) => {
     },
   };
 
-  const data = {
+  const chartData = {
     labels,
     datasets: [
       {
@@ -74,7 +91,7 @@ const ChartSucessComponent = ({ showLegend }) => {
 
   return (
     <>
-      <Bar id="chart" options={options} data={data} />
+      <Bar id="chart" options={options} data={chartData} />
       {showLegend ? (
         <div className="legend">
           {legend.map((item, index) => (

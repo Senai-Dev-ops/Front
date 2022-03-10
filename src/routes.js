@@ -5,6 +5,9 @@ import TablePage from "./pages/TablePage";
 import DonutSales from "./pages/DonutSales";
 import ChartSucess from "./pages/ChartSucess";
 
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function routes() {
   return (
     <BrowserRouter>
@@ -21,6 +24,7 @@ export default function routes() {
         <Route path="/success" element={<ChartSucess />} />
         <Route path="/success/*" element={<Navigate to="/success" />} />
       </Routes>
+      <ToastContainer />
     </BrowserRouter>
   );
 }
