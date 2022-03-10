@@ -56,7 +56,7 @@ const ChartSucessComponent = ({ showLegend }) => {
         let tax = ((item.deals * 100) / item.visited).toFixed(1);
         return {
           name,
-          tax: tax === NaN ? (0).toFixed(1) : tax,
+          tax: tax.isNaA() ? (0).toFixed(1) : tax,
         };
       })
     );
