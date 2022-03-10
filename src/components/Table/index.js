@@ -18,6 +18,7 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import LastPageIcon from "@mui/icons-material/LastPage";
 import { useEffect, useState } from "react";
 import ConnectionAPI from "../../service/apiService";
+import { toast } from "react-toastify";
 
 const api = new ConnectionAPI();
 
@@ -121,20 +122,30 @@ export default function CustomTable({ rowsNumber }) {
 
   useEffect(() => {
     const data = async () => {
-      await api.generalData().then((res) => {
-        console.log(res)
-  
-        for (var x in res) {
-          setRows((arr) => [
-            ...arr,
-            createData(res[x].id, res[x].date, res[x].seller.name, res[x].visited, res[x].deals, res[x].amount),
-          ]);
-        }
-      });
+      await api
+        .generalData()
+        .then((res) => {
+          for (var x in res) {
+            setRows((arr) => [
+              ...arr,
+              createData(
+                res[x].id,
+                res[x].date,
+                res[x].seller.name,
+                res[x].visited,
+                res[x].deals,
+                res[x].amount
+              ),
+            ]);
+          }
+        })
+        .catch(() =>
+          toast.warn("Não consegui carregar as informações dos Vendedores...")
+        );
     };
 
-    data()
-  }, [])
+    data();
+  }, []);
 
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
@@ -167,12 +178,21 @@ export default function CustomTable({ rowsNumber }) {
           ).map((row) => (
             <StyledTableRow key={row.id}>
               <StyledTableCell component="th" scope="row">
-                {row.date}
+                {new Date(row.date).getDate() < 10
+                  ? `0${new Date(row.date).getDate()}`
+                  : new Date(row.date).getDate()}
+                /
+                {new Date(row.date).getMonth() < 10
+                  ? `0${new Date(row.date).getMonth()}`
+                  : new Date(row.date).getMonth()}
+                /{new Date(row.date).getFullYear()}
               </StyledTableCell>
               <StyledTableCell align="center">{row.seller}</StyledTableCell>
               <StyledTableCell align="center">{row.visited}</StyledTableCell>
               <StyledTableCell align="center">{row.deals}</StyledTableCell>
-              <StyledTableCell align="center">{("R$ " + row.amount.toFixed(2)).replace(".", ",")}</StyledTableCell>
+              <StyledTableCell align="center">
+                {("R$ " + row.amount.toFixed(2)).replace(".", ",")}
+              </StyledTableCell>
             </StyledTableRow>
           ))}
 
