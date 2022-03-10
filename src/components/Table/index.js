@@ -16,7 +16,10 @@ import FirstPageIcon from "@mui/icons-material/FirstPage";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import LastPageIcon from "@mui/icons-material/LastPage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ConnectionAPI from "../../service/apiService";
+
+const api = new ConnectionAPI();
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -107,31 +110,32 @@ TablePaginationActions.propTypes = {
   rowsPerPage: PropTypes.number.isRequired,
 };
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+function createData(id, date, seller, visited, deals, amount) {
+  return { id, date, seller, visited, deals, amount };
 }
-
-const rows = [
-  createData("Cupcake", 305, 3.7, 1, 1),
-  createData("Donut", 452, 25.0, 1, 1),
-  createData("Eclair", 262, 16.0, 1, 1),
-  createData("Frozen yoghurt", 159, 6.0, 1, 1),
-  createData("Gingerbread", 356, 16.0, 1, 1),
-  createData("Honeycomb", 408, 3.2, 1, 1),
-  createData("Ice cream sandwich", 237, 9.0, 1, 1),
-  createData("Jelly Bean", 375, 0.0, 1, 1),
-  createData("KitKat", 518, 26.0, 1, 1),
-  createData("Lollipop", 392, 0.2, 1, 1),
-  createData("Marshmallow", 318, 0, 1, 1),
-  createData("Nougat", 360, 19.0, 1, 1),
-  createData("Oreo", 437, 18.0, 1, 1),
-];
 
 export default function CustomTable({ rowsNumber }) {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(rowsNumber);
+  const [rows, setRows] = useState([]);
 
-  // Avoid a layout jump when reaching the last page with empty rows.
+  useEffect(() => {
+    const data = async () => {
+      await api.generalData().then((res) => {
+        console.log(res)
+  
+        for (var x in res) {
+          setRows((arr) => [
+            ...arr,
+            createData(res[x].id, res[x].date, res[x].seller.name, res[x].visited, res[x].deals, res[x].amount),
+          ]);
+        }
+      });
+    };
+
+    data()
+  }, [])
+
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
@@ -161,14 +165,14 @@ export default function CustomTable({ rowsNumber }) {
             ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             : rows
           ).map((row) => (
-            <StyledTableRow key={row.name}>
+            <StyledTableRow key={row.id}>
               <StyledTableCell component="th" scope="row">
-                {row.name}
+                {row.date}
               </StyledTableCell>
-              <StyledTableCell align="center">{row.calories}</StyledTableCell>
-              <StyledTableCell align="center">{row.fat}</StyledTableCell>
-              <StyledTableCell align="center">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="center">{row.protein}</StyledTableCell>
+              <StyledTableCell align="center">{row.seller}</StyledTableCell>
+              <StyledTableCell align="center">{row.visited}</StyledTableCell>
+              <StyledTableCell align="center">{row.deals}</StyledTableCell>
+              <StyledTableCell align="center">{("R$ " + row.amount.toFixed(2)).replace(".", ",")}</StyledTableCell>
             </StyledTableRow>
           ))}
 

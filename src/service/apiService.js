@@ -24,16 +24,10 @@ export default class ConnectionAPI {
     return data;
   }
 
-  async generalData(page = 0, size = 4) {
-    const response = await API.get(`?page=${page}&size=${size}&sort,dec`);
+  async generalData() {
+    const response = await API.get(`?page=0&size=171&sort,dec`);
     const data = response.data;
 
-    const res = {
-      content: data.content,
-      pageNumber: data.pageable.pageNumber,
-      totalPages: data.totalPages,
-    };
-
-    return res;
+    return data.content;
   }
 }
