@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import DonutSalesComponent from "../../components/DonutSales";
 import Header from "../../components/header";
 import Side from "../../components/NavSide";
@@ -6,6 +6,10 @@ import Side from "../../components/NavSide";
 import "./style.css";
 
 const DonutSales = () => {
+  useEffect(() => {
+    document.title = "SENAI Superior | Vendas";
+  }, []);
+
   return (
     <article className="container">
       <Side page="sells" />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Cards from "../../components/Cards";
 import Header from "../../components/header";
 import Side from "../../components/NavSide";
@@ -7,6 +7,10 @@ import CustomTable from "../../components/Table";
 import "./style.css";
 
 const TablePage = () => {
+  useEffect(() => {
+    document.title = "SENAI Superior | Vendedores";
+  }, []);
+
   return (
     <article className="container">
       <Side page="sellers" />

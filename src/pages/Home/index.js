@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Cards from "../../components/Cards";
 import "./style.css";
 import Header from "../../components/header";
@@ -8,6 +8,10 @@ import DonutSalesComponent from "../../components/DonutSales";
 import CustomTable from "../../components/Table";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "SENAI Superior | Home";
+  }, []);
+
   return (
     <article className="container">
       <Side page="home" />
