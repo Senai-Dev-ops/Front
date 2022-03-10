@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fb445756.css",
+    "main.js": "/static/js/main.b54e43e6.js",
+    "static/media/img2.png": "/static/media/img2.c90fb3367fb318f71a43.png",
+    "static/media/LogoSenai.svg": "/static/media/LogoSenai.1f8795ea430ed68b6981d8890de9103b.svg",
+    "static/media/tdvendas.svg": "/static/media/tdvendas.c434fbf937978206de23cf5a187d7d6e.svg",
+    "static/media/taxa-de-sucesso2.svg": "/static/media/taxa-de-sucesso2.6b6ca40949e5b6949d7df7fc623348e9.svg",
+    "static/media/Chart.svg": "/static/media/Chart.bab5c39fd44a20fa96fab9a5626692ea.svg",
+    "static/media/tabela.svg": "/static/media/tabela.76809082dcf050d56c91d17296f9d9ca.svg",
+    "index.html": "/index.html",
+    "main.fb445756.css.map": "/static/css/main.fb445756.css.map",
+    "main.b54e43e6.js.map": "/static/js/main.b54e43e6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb445756.css",
+    "static/js/main.b54e43e6.js"
+  ]
+}
